@@ -45,9 +45,35 @@
  */
 
 const rockPaperScissors = function (n) {
-  // TODO: your solution here
-  return [];
+  let throws = ["R", "P", "S"]
+  let result = []
+  for(let i = 0; i < throws.length; i++){
+    for (let j = 0; j < throws.length; j++){
+      for(let k = 0; k < throws.length; k++) {
+          result.push([throws[i], throws[j], throws[k]])
+      } 
+    }
+  }
+  return result;
 };
+// Extra Credit
+// var rockPaperScissors = function(rounds) {
+//   rounds = rounds || 3;
+//   var outcomes = [];
+//   var plays = ['rock', 'paper', 'scissors'];
+//   var getOutcomes = function(playedSoFar, roundsLeft) {    
+//     if (roundsLeft === 0) {
+//       outcomes.push(playedSoFar);
+//     }
+//     else {
+//       for (var i = 0; i < plays.length; i++) {
+//         getOutcomes(playedSoFar.concat(plays[i]), roundsLeft-1);
+//       }
+//     }
+//   };
+//   getOutcomes([], rounds);
+//   return outcomes;
+// };
 
 ////////////////////////////////////////////////////// TESTS ///////////////////////////////////////////////////////////////
 
@@ -115,3 +141,4 @@ function testRockPaperScissorsExtraCredit() {
 // Run the test cases
 testRockPaperScissors();
 testRockPaperScissorsExtraCredit();
+console.log("test",23)
